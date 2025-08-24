@@ -25,7 +25,7 @@ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event i
 - \(C\): Correctly guess **In-between vs. Outside** for $$\(X_3\)$$, given $$\(X_1,X_2\)$$.
 - \(D\): Correctly guess **Suit** for $$\(X_4\)$$, given $$\(X_1,X_2,X_3\)$$.
 
-**Bayesian/Chain Structure.**  
+**A Note on The Bayesian/Chain Structure.**  
 Because of the ordering, the joint success probability factors by the chain rule:
 $$\[
 \mathbb{P}(A\cap B\cap C\cap D)
@@ -35,7 +35,7 @@ Operationally, each conditional is realized by conditioning on the already revea
 
 ---
 
-## Simulation Logic Corresponding to the R Code
+## Simulation Logic/Write-up Corresponding to the R Code
 
 **1) Deck construction and randomization.**  
 Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\text{black},\text{red}\}\)$$; generate a random permutation `deck_idx` to represent the shuffled deck.
