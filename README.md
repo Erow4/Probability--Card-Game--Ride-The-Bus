@@ -35,8 +35,10 @@ Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal orde
 
 - **Defining the Stradegies (for Optimal Guess):**
   - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
-  - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly. **NOTE: Equals count as incorrect.**
-  - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **NOTE: Endpoints will count as outside**.
+  - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly.
+      - **NOTE: Equals count as incorrect.**
+  - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly.
+      - **NOTE: Endpoints will count as outside**.
   - $D$: Guess the modal remaining suite. This is a greedy stradegy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
       - While the impact of this is often inconsequential to the result, it is an extra step I did for fun to maximize the chance of success, conditioning on the given information.
       - Note: The most impact this could have is in the following edge case: If the three cards drawn from events A, B, and C are all of the same suit. There is a 1/425 (or 0.0235\%) probability of this happening. However, if it does happen, then we know 3 cards, or 23\% of that suit is already on the table. 
