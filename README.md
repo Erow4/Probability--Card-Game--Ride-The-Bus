@@ -11,7 +11,7 @@ This project focuses on the final phase of the card game, aka when a player "rid
   - **Sampling Without Replacement**: Draws that have already been made can not occur a second time. There is also no replacement/reshuffling between guesses.
   - **No Foresight:** Player cannot see future cards. They are limited to the information given by the cards that are currently on the table.
   - **Order Matters**: Guesses for events $B,C,D$ condition on all previously revealed cards ($X_1,X_2,X_3$). Assume that the player knows and uses this information.
-- **Numbering the Ranks:** Using graph theory, map the ranks of each card to a set of numbers {$\{1,\dots,13\}$} with **the value of Ace equal to 1**. 
+- **Numbering the Ranks:** Using graph theory, map the rank of each card to a set of numbers {$1 \dots 13 $} with **the value of Ace equal to 1**. 
 - **Independence:** Assume trials are IID (independent and identically distributed). However, within each trial, events are **not independent** and they are evaluated via the chain rule.
 
 **A Note on The Bayesian/Chain Structure.**  
