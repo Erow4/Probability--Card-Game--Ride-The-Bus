@@ -64,6 +64,12 @@ Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\t
 **6) Estimating the joint probability.**  
 Run $$\(N\)$$ independent simulations. For each run, compute the indicator of sequential success
 
-$$\[\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D,\]$$
-and estimate $$\[ \widehat{\mathbb{P}}(A\cap B\cap C\cap D)=\frac{1}{N}\sum_{i=1}^N \mathbf{1}_{ABCD}^{(i)}.\]$$
+$$\[
+\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D\
+\]$$
+
+and estimate 
+
+$$\[\widehat{\mathbb{P}}(A\cap B\cap C\cap D)=\frac{1}{N}\sum_{i=1}^N \mathbf{1}_{ABCD}^{(i)}
+\]$$
 
