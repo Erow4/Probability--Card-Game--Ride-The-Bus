@@ -18,9 +18,17 @@ This project focuses on the final phase of the game, aka "riding the bus". I too
   - **No Foresight:** Player cannot see future cards. They are limited to the information given by the cards currently on the table.
   - **Order Matters**: Guesses for events $B,C,D$ condition on all previously revealed cards ($X_1,X_2,X_3$). Assume that the player knows and uses this information.
 - **Numbering the Ranks:** Using graph theory, set the Ace to a value of 1 and map the card ranks to a set of numbers {$\{1,\dots,13\}$}. 
-- **Independence:** Assume trials are independent and identically distributed (IID). However, within each trial, events are **not independent** and they are evaluated via the chain rule -- such that the joint probability of events is $P(A)P(B\mid A)P(C\mid A,B)P(D\mid A,B,C)$.
+- **Independence:** Assume trials are IID (independent and identically distributed). However, within each trial, events are **not independent** and they are evaluated via the chain rule.
 
-- **Summary of Greedy Strategy for Optimal Guess:**
+**A Note on The Bayesian/Chain Structure.**  
+Following what I wrote in the Independence assumption, the joint success probability uses the chain rule:
+$$\[
+\mathbb{P}(A\cap B\cap C\cap D)
+=\mathbb{P}(A)\,\mathbb{P}(B\mid A)\,\mathbb{P}(C\mid A,B)\,\mathbb{P}(D\mid A,B,C).
+\]$$
+Operationally, each conditional is realized by conditioning on the already revealed cards (and the strategy used at that step). Another way to illustrate this uses the form of LOTP (law of total probability), such that the joint probability is expressed as $P(A)P(B\mid A)P(C\mid A,B)P(D\mid A,B,C)$.
+
+- **Rules to Define the Optimal Guess (A Greedy Strategy):**
   - $A$: Red/black is guessed with a Bernoulli distribution such the parameter $p =.5$ .
   - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly. **Equals count as incorrect.**
   - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **Endpoints will count as outside**.
@@ -38,16 +46,8 @@ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event i
 - \(C\): Correctly guess **In-between vs. Outside** for $$\(X_3\)$$, given $$\(X_1,X_2\)$$.
 - \(D\): Correctly guess **Suit** for $$\(X_4\)$$, given $$\(X_1,X_2,X_3\)$$.
 
-**A Note on The Bayesian/Chain Structure.**  
-Because of the ordering, the joint success probability factors by the chain rule:
-$$\[
-\mathbb{P}(A\cap B\cap C\cap D)
-=\mathbb{P}(A)\,\mathbb{P}(B\mid A)\,\mathbb{P}(C\mid A,B)\,\mathbb{P}(D\mid A,B,C).
-\]$$
-Operationally, each conditional is realized by conditioning on the already revealed cards (and the strategy used at that step).
 
-
-### Write-up: The Logic of the Simulation (Walk-through Corresponding to the R Code)
+### Write-up: A Walk-through of the Logic Used in the Simulation Code
 
 **1) Deck construction and randomization.**  
 Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\text{black},\text{red}\}\)$$; generate a random permutation `deck_idx` to represent the shuffled deck.
