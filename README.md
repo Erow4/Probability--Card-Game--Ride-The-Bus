@@ -35,12 +35,15 @@ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event i
 - \(C\): Correctly guess **In-between vs. Outside** for $$\(X_3\)$$, given $$\(X_1,X_2\)$$.
 - \(D\): Correctly guess **Suit** for $$\(X_4\)$$, given $$\(X_1,X_2,X_3\)$$.
 
---
-- **Defining the Optimal Guess (A Greedy Stradegy):**
-  - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption)
-  - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly. **Equals count as incorrect.**
-  - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **Endpoints will count as outside**.
-  - $D$: Guess the modal remaining suite. This uses a greedy stradegy. Look at the remaining 49 cards, Guess the suit with the highest remaining frequency (the mode) to maximize the chance of success conditional on the given information.
+-----
+
+- **Defining the Stradegies (for Optimal Guess):**
+  - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
+  - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly. **NOTE: Equals count as incorrect.**
+  - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **NOTE: Endpoints will count as outside**.
+  - $D$: Guess the modal remaining suite. This is a greedy stradegy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
+      - While the impact of this is often inconsequential to the result, it is an extra step I did for fun to maximize the chance of success, conditioning on the given information.
+      - Note: The most impact this could have is in the following edge case: If the three cards drawn from events A, B, and C are all of the same suit. There is a 1/425 (or 0.0235\%) probability of this happening. However, if it does happen, then we know 3 cards, or 23\% of that suit is already on the table. 
  
 - **Outcome definition to Calculate the Joint Probability** To estimate $P(A\cap B\cap C\cap D)$ for **one pass** (aka, the “first try”) of four guesses, use an indicator of sequential success such that $\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D$.
 
