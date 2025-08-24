@@ -42,7 +42,7 @@ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event i
   - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **Endpoints will count as outside**.
   - $D$: Guess the modal remaining suite. This uses a greedy stradegy. Look at the remaining 49 cards, Guess the suit with the highest remaining frequency (the mode) to maximize the chance of success conditional on the given information.
  
-- **Outcome definition: The Joint Porbability** You estimate $P(A\cap B\cap C\cap D)$ for **one pass** (the “first try”) of four guesses; the indicator of sequential success is $\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D$.
+- **Outcome definition to Calculate the Joint Probability** To estimate $P(A\cap B\cap C\cap D)$ for **one pass** (aka, the “first try”) of four guesses, use the indicator of sequential success such that $\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D$.
 
 -----
 
