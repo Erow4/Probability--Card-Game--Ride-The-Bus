@@ -22,10 +22,8 @@ This project focuses on the final phase of the game, aka "riding the bus". I too
 
 **A Note on The Bayesian/Chain Structure.**  
 Following what I wrote in the Independence assumption, the joint success probability uses the chain rule:
-$$\[
-\mathbb{P}(A\cap B\cap C\cap D)
-=\mathbb{P}(A)\,\mathbb{P}(B\mid A)\,\mathbb{P}(C\mid A,B)\,\mathbb{P}(D\mid A,B,C).
-\]$$
+$$\mathbb{P}(A\cap B\cap C\cap D)
+=\mathbb{P}(A)\,\mathbb{P}(B\mid A)\,\mathbb{P}(C\mid A,B)\,\mathbb{P}(D\mid A,B,C).$$
 Operationally, each conditional is realized by conditioning on the already revealed cards (and the strategy used at that step). Another way to illustrate this uses the form of LOTP (law of total probability), such that the joint probability is expressed as $P(A)P(B\mid A)P(C\mid A,B)P(D\mid A,B,C)$.
 
 - **Rules to Define the Optimal Guess (A Greedy Strategy):**
