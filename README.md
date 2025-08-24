@@ -74,7 +74,7 @@ Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\t
 - Reveal $$\(X_4\)$$ and record $$\( \mathbf{1}_D = \mathbb{I}\{\text{guess matches suit}(X_4)\}\)$$.
 
 **6) Estimating the joint probability.**  
-Run $$\(N\)$$ number of independent simulations. For each run, compute the indicator of sequential success. I used an indicator variable because whether or not all events were guessed correctly is a true or false outcome -- Thus, suiting the defintion of the random variable. By this logic, we can preserve the binary nature of the problem when moving to calculate the joint probability of the events. This can be formulated mathematically as follows:
+Run $$N$$ number of independent simulations. For each run, compute the indicator of sequential success. I used an indicator variable because whether or not all events were guessed correctly is a true or false outcome -- Thus, suiting the defintion of the random variable. By this logic, we can preserve the binary nature of the problem when moving to calculate the joint probability of the events. This can be formulated mathematically as follows:
 
 $$\[
 \mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D\
