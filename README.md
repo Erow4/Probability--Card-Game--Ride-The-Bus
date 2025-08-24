@@ -25,11 +25,7 @@ Operationally, each conditional is realized by conditioning on the (already reve
 
 -----
 ### Defining the Events and Order:
-Define the event set
-
-$$\mathcal{E}=\{A,B,C,D\}$$
-
-with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event is “the guess for that round is correct,” based on information available up to that round:
+Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event is “the guess for that round is correct,” based on information available up to that round:
 - \(A\): Correctly guess **Red vs. Black** for $$\(X_1\)$$.
 - \(B\): Correctly guess **Higher vs. Lower** for $$\(X_2\)$$, given $$\(X_1\)$$.
 - \(C\): Correctly guess **In-between vs. Outside** for $$\(X_3\)$$, given $$\(X_1,X_2\)$$.
