@@ -51,23 +51,23 @@ Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\t
 - Choose the **optimal** direction (“higher” if more higher cards remain; “lower” otherwise; break ties at random).  
 - Reveal $$\(X_2\)$$ and record $$\( \mathbf{1}_B = \mathbb{I}\{\text{direction matches }(r_2 \gtrless r_1)\}\)$$.
 
-**4) Event \(C\): In-between/Outside (conditions on \(X_1,X_2\)).**  
-- With \(r_{\min}=\min(r_1,r_2)\) and \(r_{\max}=\max(r_1,r_2)\), count remaining ranks strictly between vs. outside/equal.  
+**4) Event $$\(C\)$$: In-between/Outside (conditions on $$\(X_1,X_2\)$$).**  
+- With $$\(r_{\min}=\min(r_1,r_2)\)$$ and $$\(r_{\max}=\max(r_1,r_2)\)$$, count remaining ranks strictly between vs. outside/equal.  
 - Choose the **higher-probability** option (“between” if between-count > outside-count; else “outside”; break ties at random).  
-- Reveal \(X_3\) and record \( \mathbf{1}_C = \mathbb{I}\{\text{guess matches position of }r_3\}\).
+- Reveal $$\(X_3\)$$ and record $$\( \mathbf{1}_C = \mathbb{I}\{\text{guess matches position of }r_3\}\)$$.
 
-**5) Event \(D\): Suit (conditions on \(X_1,X_2,X_3\)).**  
+**5) Event $$\(D\)$$: Suit (conditions on $$\(X_1,X_2,X_3\)$$).**  
 - From the 49 remaining cards, compute the remaining suit frequencies.  
 - (Method permits either a uniform suit guess or a **greedy** guess of the modal remaining suit.)  
-- Reveal \(X_4\) and record \( \mathbf{1}_D = \mathbb{I}\{\text{guess matches suit}(X_4)\}\).
+- Reveal $$\(X_4\)$$ and record $$\( \mathbf{1}_D = \mathbb{I}\{\text{guess matches suit}(X_4)\}\)$$.
 
 **6) Estimating the joint probability.**  
-Run \(N\) independent simulations. For each run, compute the indicator of sequential success
-\[
+Run $$\(N\)$$ independent simulations. For each run, compute the indicator of sequential success
+$$\[
 \mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D,
 \]
 and estimate
 \[
 \widehat{\mathbb{P}}(A\cap B\cap C\cap D)=\frac{1}{N}\sum_{i=1}^N \mathbf{1}_{ABCD}^{(i)}.
-\]
+\]$$
 
