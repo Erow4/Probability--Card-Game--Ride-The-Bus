@@ -37,7 +37,7 @@ with the required temporal order $$\(A \prec B \prec C \prec D\)$$. Each event i
 
 --
 - **Defining the Optimal Guess (A Greedy Stradegy):**
-  - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry in the Deck Model assumption)
+  - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption)
   - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly. **Equals count as incorrect.**
   - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly. **Endpoints will count as outside**.
   - $D$: Guess the modal remaining suite. This uses a greedy stradegy. Look at the remaining 49 cards, Guess the suit with the highest remaining frequency (the mode) to maximize the chance of success conditional on the given information.
