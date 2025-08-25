@@ -55,23 +55,23 @@ Construct ranks $$\((1{:}13)\)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\t
 **2) Event $$\(A\)$$: Red/Black (uses no prior card info).**  
 - Observe color of $$\(X_1\)$$.  
 - Guess uniformly at random between “red” and “black”.  
-- Record $$\( \mathbf{1}_A = \mathbb{I}\{\text{guess matches color}(X_1)\}\)$$.
+- Record $$\mathbf{1}_A = \mathbb{I}\{\text{guess matches color}(X_1)\}$$.
 - *Note:* This will always have a probability of $$\( \tfrac{1}{2} \)$$ since we assume that the deck is a full, standard deck at the start.
 
 **3) Event $$\(B\)$$: Higher/Lower (conditions on $$\(X_1\)$$).**  
-- With $$\(r_1=\text{rank}(X_1)\)$$, compute counts of strictly higher and strictly lower ranks remaining.  
+- With $$r_1=\text{rank}(X_1)$$, compute counts of strictly higher and strictly lower ranks remaining.  
 - Choose the **optimal** direction (“higher” if more higher cards remain; “lower” otherwise; break ties at random).  
-- Reveal $$\(X_2\)$$ and record $$\( \mathbf{1}_B = \mathbb{I}\{\text{direction matches }(r_2 \gtrless r_1)\}\)$$.
+- Reveal $$\(X_2\)$$ and record $$\mathbf{1}_B = \mathbb{I}\{\text{direction matches }(r_2 \gtrless r_1)\}$$.
 
 **4) Event $$\(C\)$$: In-between/Outside (conditions on $$\(X_1,X_2\)$$).**  
-- With $$\(r_{\min}=\min(r_1,r_2)\)$$ and $$\(r_{\max}=\max(r_1,r_2)\)$$, count remaining ranks strictly between vs. outside/equal.  
+- With $$r_{\min}=\min(r_1,r_2)$$ and $$r_{\max}=\max(r_1,r_2)$$, count remaining ranks strictly between vs. outside/equal.  
 - Choose the **higher-probability** option (“between” if between-count > outside-count; else “outside”; break ties at random).  
-- Reveal $$\(X_3\)$$ and record $$\( \mathbf{1}_C = \mathbb{I}\{\text{guess matches position of }r_3\}\)$$.
+- Reveal $$\(X_3\)$$ and record $$\mathbf{1}_C = \mathbb{I}\{\text{guess matches position of }r_3\}$$.
 
 **5) Event $$\(D\)$$: Suit (conditions on $$\(X_1,X_2,X_3\)$$).**  
 - From the 49 remaining cards, compute the remaining suit frequencies.  
 - (Method permits either a uniform suit guess or a **greedy** guess of the modal remaining suit.)  
-- Reveal $$\(X_4\)$$ and record $$\( \mathbf{1}_D = \mathbb{I}\{\text{guess matches suit}(X_4)\}\)$$.
+- Reveal $$\(X_4\)$$ and record $$\mathbf{1}_D = \mathbb{I}\{\text{guess matches suit}(X_4)\}$$.
 
 **6) Estimating the joint probability.**  
 Run $$N$$ number of independent simulations. For each run, compute the indicator of sequential success. I used an indicator variable because whether or not all events were guessed correctly is a true or false outcome -- Thus, suiting the defintion of the random variable. By this logic, we can preserve the binary nature of the problem when moving to calculate the joint probability of the events. This can be formulated mathematically as follows:
