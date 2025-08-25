@@ -33,15 +33,15 @@ Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal orde
 
 -----
 
-- **Defining the Stradegies (for Optimal Guess):**
-  - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
-  - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly.
-      - **NOTE: Equals count as incorrect.**
-  - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly.
-      - **NOTE: Endpoints will count as outside**.
-  - $D$: Guess the modal remaining suite. This is a greedy stradegy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
-      - While the impact of this is often inconsequential to the result, it is an extra step I did for fun to maximize the chance of success, conditioning on the given information.
-      - Note: The most impact this has is if the three cards drawn from events A, B, and C are all of the same suit. There is a 1/425 (~0.0235\%) probability of this happening. However, if it does happen, then we know 3 cards (23\%) of that suit is already on the table. 
+### Defining the Stradegies (for Optimal Guess):
+- $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
+- $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly.
+  - **NOTE: Equals count as incorrect.**
+- $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly.
+  - **NOTE: Endpoints will count as outside**.
+- $D$: Guess the modal remaining suite. This is a greedy stradegy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
+  - While the impact of this is often inconsequential to the result, it is an extra step I did for fun to maximize the chance of success, conditioning on the given information.
+  - Note: The most impact this has is if the three cards drawn from events A, B, and C are all of the same suit. There is a 1/425 (~0.0235\%) probability of this happening. However, if it does happen, then we know 3 cards (23\%) of that suit is already on the table. 
  
 - **Outcome definition to Calculate the Joint Probability** To estimate $P(A\cap B\cap C\cap D)$ for **one pass** (aka, the “first try”) of four guesses, use an indicator of sequential success such that $\mathbf{1}_{ABCD}=\mathbf{1}_A\mathbf{1}_B\mathbf{1}_C\mathbf{1}_D$.
 
