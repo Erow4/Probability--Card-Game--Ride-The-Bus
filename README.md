@@ -50,7 +50,7 @@ Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal orde
 ### Write-up: A Walk-through of the Logic Used in Each Part of the Simulation Code
 
 **1) Deck construction and randomization.**  
-Construct ranks $$(1{:}13)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\text{black},\text{red}\}\)$$; generate a random permutation `deck_idx` to represent the shuffled deck.
+Construct ranks $$(1{:}13)$$, suits $$\(\{S,H,D,C\}\)$$, and colors $$\(\{\text{black}, \text{red}\}\)$$; generate a random permutation `deck_idx` to represent the shuffled deck.
 
 **2) Event $$\(A\)$$: Red/Black (uses no prior card info).**  
 - Observe color of $$\(X_1\)$$.  
