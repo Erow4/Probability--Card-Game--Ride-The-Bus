@@ -33,13 +33,13 @@ Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal orde
 
 -----
 
-### Defining the Stradegies (for Optimal Guess):
+### Defining the Strategies (for Optimal Guess):
 - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
 - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly.
   - **NOTE: Equals count as incorrect.**
 - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly.
   - **NOTE: Endpoints will count as outside**.
-- $D$: Guess the modal remaining suite. This is a greedy stradegy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
+- $D$: Guess the modal remaining suite. This is a greedy strategy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
   - While the impact of this is often inconsequential to the result, it is an extra step that I honestly did for fun just to squeeze out more accuracy by continuing to condition on the given information.
   - *Exploring the Extreme Case:* All three cards drawn from events A, B, and C have the same suit. There is a 22/425 (~5.176\%) probability of this happening. However, if it does happen, then we already know 3 cards (23\%) of that suit are already on the table. Thus, we know that we have 10 of those cards left in the remaining deck (which can be reformulated such that 10/49=~20.41\% are the same suit as what's on the table). We also know that the other three suits each make up 13/49(~26.53\%). This proves that guessing one of the three suits that have 13 cards still left in the main deck will beat a uniform (1/4=25%) guess -- and WILL DEFINITELY beat guessing the depleted suit.
  
