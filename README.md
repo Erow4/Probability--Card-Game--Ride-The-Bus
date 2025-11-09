@@ -1,5 +1,5 @@
 # Probability--Card-Game--Ride-The-Bus
-
+-----
 ## Introduction
 
 This project focuses on the final phase of the card game, aka when a player "rides the bus". I took an interest to this part of the game because it can be modeled as a Monte Carlo problem, and honestly I just thought it would be cool to do that. I used a simulation to find the probability of correctly guessing all card properties in sequence on the first try. Using this method, I calculated that the resulting probability converged to about 0.07, or 7%. If you'd like more information about the game, please see the bottom of this READ.me for a brief description.
