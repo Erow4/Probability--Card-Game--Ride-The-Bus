@@ -36,7 +36,7 @@ Define the event set $$\mathcal{E}=\{A,B,C,D\}$$ with the required temporal orde
 ### Defining the Strategies (for Optimal Guess):
 - $A$: Red/black always has a 50\% success rate (By the uniformity and symmetry of the Deck Model assumption). Choose the guess with a bernoulli distribution (with p=0.5) since you might as as well just flip a coin.
 - $B$: Guess “higher” if more higher cards remain, guess “lower” if more lower remain. A tie will be broken uniformly.
-  - **NOTE: Equals count as incorrect.**
+  - **NOTE: Equals will count as incorrect.**
 - $C$: Guess “between” if more remaining cards lie strictly between $r_{\min},r_{\max}$, else guess “outside”. A tie will be broken uniformly.
   - **NOTE: Endpoints will count as outside**.
 - $D$: Guess the modal remaining suite. This is a greedy strategy. Look at the remaining 49 cards, guess the suit with the highest remaining frequency (the mode).
